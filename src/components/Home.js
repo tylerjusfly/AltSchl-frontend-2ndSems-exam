@@ -9,7 +9,7 @@ const Navbar = () => {
   return (
     <nav className="flex flex-row justify-between p-4">
       <img src={navLogo} alt="nav Logo" width={44} />
-      <ul className="flex flex-row gap-14 font-bold font-fira pr-5 self-center">
+      <ul className="flex flex-row gap-12 font-bold font-fira pr-5 self-center">
         <li>Dashboard {context.user && `| ${context.user}`}</li>
         <li>About</li>
         <li>Signup</li>

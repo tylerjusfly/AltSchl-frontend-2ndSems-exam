@@ -8,10 +8,7 @@ Setup react-router, implement Nested routes, 404 page, and Error boundary. Set u
 
 ![image](https://user-images.githubusercontent.com/53145644/199037027-3a7a1d9b-71b5-43dd-a6a2-27d8429b15da.png)
 
-
-```
-
-```
+### Todos
 
 [x] React-router -Nested Routes
 
@@ -31,8 +28,10 @@ Setup react-router, implement Nested routes, 404 page, and Error boundary. Set u
 
 [x] 404 PAGE
 
-[] HOME PAGE
+[x] HOME PAGE
 
 [] USER DASHBOARD
 
 [x] NAVIGATION MENU
+
+[] Login Page
