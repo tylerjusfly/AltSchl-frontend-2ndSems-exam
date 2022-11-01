@@ -1,18 +1,32 @@
-import React, { useContext } from "react";
-import { Outlet } from "react-router-dom";
+import React from "react";
+import { Link, Outlet } from "react-router-dom";
 import navLogo from "../assets/imgs/navbar.svg";
 import { useAuthContext } from "../hooks/useAuthContext";
 
 const Navbar = () => {
-  const context = useAuthContext();
+  const { user, pass, dispatch } = useAuthContext();
+
+  const logOut = () => {
+    dispatch({ type: "LOGOUT" });
+  };
 
   return (
     <nav className="flex flex-row justify-between p-4">
-      <img src={navLogo} alt="nav Logo" width={44} />
+      <Link to="/">
+        <img src={navLogo} alt="nav Logo" width={44} />
+      </Link>
       <ul className="flex flex-row gap-12 font-bold font-fira pr-5 self-center">
-        <li>Dashboard {context.user && `| ${context.user}`}</li>
-        <li>About</li>
-        <li>Signup</li>
+        <Link>Dashboard {user && `| ${user}`}</Link>
+        <Link>About</Link>
+        {user ? (
+          <>
+            <Link onClick={logOut} to="/">
+              LogOut
+            </Link>
+          </>
+        ) : (
+          <Link to="/login">Login</Link>
+        )}
       </ul>
     </nav>
   );

@@ -3,6 +3,9 @@ module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
     extend: {
+      width: {
+        100: "32rem",
+      },
       margin: {
         96: "30rem",
       },
