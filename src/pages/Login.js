@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useAuthContext } from "../hooks/useAuthContext";
+import { useFindUser } from "../hooks/useFindUser";
 
 export const Login = () => {
   const [formInput, setFormInput] = useState({
@@ -22,7 +23,14 @@ export const Login = () => {
   function submitForm(event) {
     event.preventDefault();
     console.log(formInput);
-    dispatch({ type: "LOGIN", payload: formInput.username });
+    //find for user in a file , if exist , pass user name in context
+    //const { user } = useFindUser(formInput.username);
+    const userData = users.find((user) => user.username === username);
+
+    console.log(userData);
+
+    //send a login SuccessFul popup
+    dispatch({ type: "LOGIN", payload: userData.username });
   }
 
   return (
@@ -42,7 +50,7 @@ export const Login = () => {
           name="password"
           placeholder="password"
           className="input"
-          // value={formInput.password}
+          value={formInput.password}
           onChange={handleChange}
         />
         <button type="submit" className="btn font-ty">

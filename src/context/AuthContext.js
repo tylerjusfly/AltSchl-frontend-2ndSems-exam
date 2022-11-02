@@ -18,8 +18,12 @@ const reducer = (state, action) => {
 export const AuthContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, {
     user: null,
-    pass: "altschool",
+    pass: null,
   });
 
-  return <AuthContext.Provider value={{ ...state, dispatch }}>{children}</AuthContext.Provider>;
+  const logOut = () => {
+    dispatch({ type: "LOGOUT" });
+  };
+
+  return <AuthContext.Provider value={{ ...state, dispatch, logOut }}>{children}</AuthContext.Provider>;
 };

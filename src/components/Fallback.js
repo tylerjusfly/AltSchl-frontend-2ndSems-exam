@@ -1,9 +1,10 @@
-//import { useReducer } from "react";
+import { Navbar } from "./Home";
 
 export const FallBackError = ({ error }) => {
   return (
     <>
-      <p>Something went wrong:</p>
+      <Navbar />
+      <h2>Something went wrong:</h2>
       <pre style={{ color: "red" }}>{error.message}</pre>
     </>
   );

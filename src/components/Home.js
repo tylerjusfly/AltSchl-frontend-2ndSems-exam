@@ -3,12 +3,8 @@ import { Link, Outlet } from "react-router-dom";
 import navLogo from "../assets/imgs/navbar.svg";
 import { useAuthContext } from "../hooks/useAuthContext";
 
-const Navbar = () => {
-  const { user, pass, dispatch } = useAuthContext();
-
-  const logOut = () => {
-    dispatch({ type: "LOGOUT" });
-  };
+export const Navbar = () => {
+  const { user, pass, logOut } = useAuthContext();
 
   return (
     <nav className="flex flex-row justify-between p-4">
@@ -17,7 +13,7 @@ const Navbar = () => {
       </Link>
       <ul className="flex flex-row gap-12 font-bold font-fira pr-5 self-center">
         <Link>Dashboard {user && `| ${user}`}</Link>
-        <Link>About</Link>
+        <Link to="errorboundary">ErrorBoundary</Link>
         {user ? (
           <>
             <Link onClick={logOut} to="/">
