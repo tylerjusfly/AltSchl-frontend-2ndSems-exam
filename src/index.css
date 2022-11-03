@@ -30,6 +30,9 @@
   .input {
     @apply p-4 border border-black rounded font-medium font-ty;
   }
+  .flex-middle {
+    @apply flex flex-col justify-center items-center;
+  }
 }
 
 h2 {

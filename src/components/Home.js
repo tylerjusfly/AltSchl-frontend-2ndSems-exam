@@ -4,7 +4,7 @@ import navLogo from "../assets/imgs/navbar.svg";
 import { useAuthContext } from "../hooks/useAuthContext";
 
 export const Navbar = () => {
-  const { user, pass, logOut } = useAuthContext();
+  const { user, logOut } = useAuthContext();
 
   return (
     <nav className="flex flex-row justify-between p-4">
@@ -12,7 +12,7 @@ export const Navbar = () => {
         <img src={navLogo} alt="nav Logo" width={44} />
       </Link>
       <ul className="flex flex-row gap-12 font-bold font-fira pr-5 self-center">
-        <Link>Dashboard {user && `| ${user}`}</Link>
+        <Link to="users">Dashboard {user && `| ${user}`}</Link>
         <Link to="errorboundary">ErrorBoundary</Link>
         {user ? (
           <>

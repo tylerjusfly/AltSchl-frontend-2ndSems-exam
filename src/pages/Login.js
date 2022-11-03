@@ -1,14 +1,17 @@
 import { useState } from "react";
 import { useAuthContext } from "../hooks/useAuthContext";
-import { useFindUser } from "../hooks/useFindUser";
+import { users } from "../users/users";
+import { Link } from "react-router-dom";
+import navLogo from "../assets/imgs/navbar.svg";
 
 export const Login = () => {
   const [formInput, setFormInput] = useState({
     username: "",
     password: "",
   });
+  const [isAuth, setIsAuth] = useState("PENDING");
 
-  const { dispatch } = useAuthContext();
+  const { dispatch, user } = useAuthContext();
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -24,13 +27,36 @@ export const Login = () => {
     event.preventDefault();
     console.log(formInput);
     //find for user in a file , if exist , pass user name in context
-    //const { user } = useFindUser(formInput.username);
-    const userData = users.find((user) => user.username === username);
+    const userData = users.find((user) => user.username === formInput.username);
 
-    console.log(userData);
+    //checking if User and Password matches
+    if (userData && userData.pass === formInput.password) {
+      setIsAuth("AUTHENTICATED");
 
-    //send a login SuccessFul popup
-    dispatch({ type: "LOGIN", payload: userData.username });
+      //send a login SuccessFul popup
+      dispatch({ type: "LOGIN", payload: { name: userData?.username, pass: userData?.pass } });
+    }
+    if (!userData || formInput.password !== userData.pass) {
+      setIsAuth("FORBIDDEN");
+    }
+  }
+
+  //This is to recognize State
+  const isLoggedIn = isAuth === "AUTHENTICATED";
+  const notLoggedIn = isAuth === "FORBIDDEN";
+
+  if (isLoggedIn) {
+    return (
+      <div className="bg-white text-black flex-middle gap-10 w-96 m-auto p-8 mt-20 rounded">
+        <img src={navLogo} alt="web-logo" width={70} />
+        <p className="font-ty font-bold">Your Are SuccessFully Logged In {user} </p>
+        <button>
+          <Link className="btn" to="/users">
+            Go To Dashboard
+          </Link>
+        </button>
+      </div>
+    );
   }
 
   return (
@@ -56,6 +82,7 @@ export const Login = () => {
         <button type="submit" className="btn font-ty">
           LOGIN
         </button>
+        {notLoggedIn && <pre className="text-red-600">Invalid User Details</pre>}
       </form>
     </div>
   );

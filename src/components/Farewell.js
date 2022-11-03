@@ -1,11 +1,11 @@
 import React from "react";
-import warnSign from "../assets/imgs/warningsign.svg";
+import error404 from "../assets/imgs/errorsvg.svg";
 
 export const Farewell = () => {
   return (
     <div className="flex flex-col justify-center items-center font-ty">
-      <img className="mt-10" src={warnSign} alt="DOES NOT EXIST" width={370} />
-      <h2 className="text-3xl font-bold">PAGE DOES NOT EXIST</h2>
+      <img className="mt-10" src={error404} alt="DOES NOT EXIST" width={370} />
+      <h2 className="text-3xl font-bold mt-10">PAGE DOES NOT EXIST</h2>
     </div>
   );
 };

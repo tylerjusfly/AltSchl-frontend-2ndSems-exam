@@ -18,11 +18,13 @@ Setup react-router, implement Nested routes, 404 page, and Error boundary. Set u
 
 [x] Install Tailwind for Design
 
-[] Fake Userauth Context using contextAPI
+[x] Fake Userauth Context using contextAPI
 
 [x] extract out a custom hook to get the currently logged-in user.
 
-[] Implement SEO and Navigation menu
+[x] Implement SEO and Navigation menu
+
+[] Error Boundary func
 
 ## PAGES TO DESIGN
 
@@ -34,4 +36,6 @@ Setup react-router, implement Nested routes, 404 page, and Error boundary. Set u
 
 [x] NAVIGATION MENU
 
-[] Login Page
+[x] Login Page
+
+[x] Error Boundary Page
