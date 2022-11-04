@@ -27,16 +27,16 @@ export const Login = () => {
     event.preventDefault();
     console.log(formInput);
     //find for user in a file , if exist , pass user name in context
-    const userData = users.find((user) => user.username === formInput.username);
+    const userData = users.find((user) => user.username === formInput.username.toLowerCase());
 
     //checking if User and Password matches
-    if (userData && userData.pass === formInput.password) {
+    if (userData && userData.pass === formInput.password.toLowerCase()) {
       setIsAuth("AUTHENTICATED");
 
       //send a login SuccessFul popup
       dispatch({ type: "LOGIN", payload: { name: userData?.username, pass: userData?.pass } });
     }
-    if (!userData || formInput.password !== userData.pass) {
+    if (!userData || formInput.password.toLowerCase() !== userData.pass) {
       setIsAuth("FORBIDDEN");
     }
   }
@@ -61,7 +61,7 @@ export const Login = () => {
 
   return (
     <div className="flex flex-col items-start h-96 m-24">
-      <div className="mb-10 tab font-ty"> Login with username(tylerjusfly) password(altschool)</div>
+      <div className="mb-10 tab font-ty"> Login with username(jordan) password(ladygaga)</div>
       <form onSubmit={submitForm} className="flex flex-col gap-10 w-100 bg-white p-10 rounded text-black font-ty">
         <input
           type="text"
