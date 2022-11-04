@@ -12,7 +12,7 @@ export const Navbar = () => {
         <img src={navLogo} alt="nav Logo" width={44} />
       </Link>
       <ul className="flex flex-row gap-12 font-bold font-fira pr-5 self-center">
-        <Link to="users">Dashboard {user && `| ${user}`}</Link>
+        <Link to={user ? "users" : "login"}>Dashboard {user && `| ${user}`}</Link>
         <Link to="errorboundary">ErrorBoundary</Link>
         {user ? (
           <>
