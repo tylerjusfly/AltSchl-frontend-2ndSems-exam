@@ -1,4 +1,4 @@
-import { Navbar } from "./Home";
+import { Navbar } from "./Navbar";
 import warnSign from "../assets/imgs/warningsign.svg";
 
 export const FallBackError = ({ error }) => {

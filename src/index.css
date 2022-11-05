@@ -22,10 +22,10 @@
     word-spacing: 5px;
   }
   .btn {
-    @apply inline-block px-5 py-3 rounded-lg bg-indigo-500 hover:bg-indigo-400 hover:-translate-y-5 focus:outline-none focus:ring focus:ring-offset-2 focus:ring-indigo-400 focus:ring-opacity-50 active:bg-indigo-600 transform transition text-white uppercase tracking-wider font-semibold text-sm sm:text-base;
+    @apply inline-block px-5 py-3 rounded-lg bg-indigo-500 hover:bg-indigo-400 hover:-translate-y-5 focus:outline-none focus:ring focus:ring-offset-2 focus:ring-indigo-400 focus:ring-opacity-50 active:bg-indigo-600 transform transition text-white uppercase tracking-wider font-semibold text-sm;
   }
   .tab {
-    @apply inline-block px-5 py-3 rounded-lg bg-indigo-500 focus:outline-none focus:ring focus:ring-offset-2 focus:ring-indigo-400 focus:ring-opacity-50 active:bg-indigo-600 text-white uppercase tracking-wider font-semibold text-sm sm:text-base;
+    @apply inline-block px-5 py-3 rounded-lg bg-indigo-500 focus:outline-none focus:ring focus:ring-offset-2 focus:ring-indigo-400 focus:ring-opacity-50 active:bg-indigo-600 text-white uppercase tracking-wider font-semibold text-sm;
   }
   .input {
     @apply p-4 border border-black rounded font-medium font-ty;

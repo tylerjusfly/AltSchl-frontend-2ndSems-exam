@@ -61,8 +61,11 @@ export const Login = () => {
 
   return (
     <div className="flex flex-col items-start h-96 m-24">
-      <div className="mb-10 tab font-ty"> Login with username(jordan) password(ladygaga)</div>
-      <form onSubmit={submitForm} className="flex flex-col gap-10 w-100 bg-white p-10 rounded text-black font-ty">
+      <div className="mb-10 tab font-ty lg:w-100 md:w-100 sm:w-80"> Login with username(jordan) password(ladygaga)</div>
+      <form
+        onSubmit={submitForm}
+        className="flex flex-col gap-10 sm:w-80 md:w-100 lg:w-100 bg-white p-10 rounded text-black font-ty"
+      >
         <input
           type="text"
           name="username"

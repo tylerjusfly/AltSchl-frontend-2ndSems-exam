@@ -1,32 +1,6 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
-import navLogo from "../assets/imgs/navbar.svg";
-import { useAuthContext } from "../hooks/useAuthContext";
-
-export const Navbar = () => {
-  const { user, logOut } = useAuthContext();
-
-  return (
-    <nav className="flex flex-row justify-between p-4">
-      <Link to="/">
-        <img src={navLogo} alt="nav Logo" width={44} />
-      </Link>
-      <ul className="flex flex-row gap-12 font-bold font-fira pr-5 self-center">
-        <Link to={user ? "users" : "login"}>Dashboard {user && `| ${user}`}</Link>
-        <Link to="errorboundary">ErrorBoundary</Link>
-        {user ? (
-          <>
-            <Link onClick={logOut} to="/">
-              LogOut
-            </Link>
-          </>
-        ) : (
-          <Link to="/login">Login</Link>
-        )}
-      </ul>
-    </nav>
-  );
-};
+import { Outlet } from "react-router-dom";
+import { Navbar } from "./Navbar";
 
 export const Layout = () => {
   return (
@@ -49,7 +23,7 @@ export const Home = () => {
           Let’s face it; if you want to go to space, you might as well genuinely go to outer space and not hover kind of
           on the edge of it. Well sit back, and relax because we’ll give you a truly out of this world experience!
         </p>
-        <button className="btn mx-96">Explore</button>
+        <button className="btn lg:mx-96 sm:mx-40 mt-7 md:mx-72">Explore</button>
       </main>
     </>
   );
