@@ -25,7 +25,6 @@ export const Login = () => {
 
   function submitForm(event) {
     event.preventDefault();
-    console.log(formInput);
     //find for user in a file , if exist , pass user name in context
     const userData = users.find((user) => user.username === formInput.username.toLowerCase());
 
@@ -60,8 +59,8 @@ export const Login = () => {
   }
 
   return (
-    <div className="flex flex-col items-start h-96 m-24">
-      <div className="mb-10 tab font-ty lg:w-100 md:w-100 sm:w-80"> Login with username(jordan) password(ladygaga)</div>
+    <div className="flex flex-col items-center lg:items-start lg:h-96 lg:m-24 ">
+      <div className="mb-10 tab font-ty lg:w-100 md:w-100 p-10">Login with username(jordan) password(ladygaga)</div>
       <form
         onSubmit={submitForm}
         className="flex flex-col gap-10 sm:w-80 md:w-100 lg:w-100 bg-white p-10 rounded text-black font-ty"
