@@ -42,3 +42,26 @@ h2 {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
+
+@media only screen and (max-width: 768px) {
+  .custom-hidden {
+    display: none;
+  }
+  .parentDiv {
+    /* position: relative; */
+    display: inline-block;
+    cursor: pointer;
+  }
+  .parentDiv:hover .dropdown--content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  .dropdown--content :nth-child(n) {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+}
