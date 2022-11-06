@@ -63,7 +63,7 @@ code {
     margin-top: 14px;
     background-color: whitesmoke;
     color: #000;
-    padding: 4em;
+    padding: 3em;
     border-radius: 10px;
   }
   .dropdown--content :nth-child(n) {

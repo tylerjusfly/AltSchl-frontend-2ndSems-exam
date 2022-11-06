@@ -15,7 +15,7 @@ export const Home = () => {
   return (
     // you can add React.Fragment if you wish to add styles to this tag
     <>
-      <main className="flex flex-col items-start h-96 m-24">
+      <main className="flex flex-col items-start h-96 mt-24 m-5 md:m-24 lg:m-24">
         <div className="font-fira word-space">
           SO, YOU WANT TO TRAVEL TO <p className="pt-5 text-8xl font-ty word-space"> SPACE </p>
         </div>
