@@ -46,7 +46,7 @@ export const Login = () => {
 
   if (isLoggedIn) {
     return (
-      <div className="bg-white text-black flex-middle gap-10 w-96 m-auto p-8 mt-20 rounded">
+      <div className="bg-white text-black flex-middle gap-10 md:w-96 lg:w-96 m-auto p-8 mt-20 rounded">
         <img src={navLogo} alt="web-logo" width={70} />
         <p className="font-ty font-bold">Your Are SuccessFully Logged In {user} </p>
         <button>

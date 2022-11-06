@@ -64,6 +64,7 @@ code {
     background-color: whitesmoke;
     color: #000;
     padding: 3em;
+    width: 16em;
     border-radius: 10px;
   }
   .dropdown--content :nth-child(n) {
