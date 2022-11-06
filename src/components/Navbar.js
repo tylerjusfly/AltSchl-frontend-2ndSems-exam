@@ -6,13 +6,13 @@ export const Navbar = () => {
   const { user, logOut } = useAuthContext();
 
   return (
-    <nav className="flex flex-row justify-between p-5 ">
-      <Link to="/" className="self-center">
+    <nav className="flex flex-row justify-between p-5">
+      <Link to="/" className="self-center navb">
         <img src={navLogo} alt="nav Logo" width={44} />
       </Link>
 
       <div className="parentDiv">
-        <div className="p-4 space-y-2 rounded shadow self-center lg:hidden md:hidden drop--btn">
+        <div className="p-4 space-y-2 rounded shadow self-center lg:hidden md:hidden drop--btn ">
           <span className="block w-8 h-0.5 bg-gray-100 animate-pulse"></span>
           <span className="block w-8 h-0.5 bg-gray-100 animate-pulse"></span>
           <span className="block w-8 h-0.5 bg-gray-100 animate-pulse"></span>
